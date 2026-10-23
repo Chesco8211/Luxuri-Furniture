@@ -1,0 +1,595 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #24211e;
+  background-color: red;
+}
+
+
+
+
+
+
+/* HEADER */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 7%;
+  background-color: #f7f4ef;
+ position: sticky;
+top: 0;
+z-index: 1000;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  letter-spacing: 4px;
+  margin: 0;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+}
+
+.menu a {
+  color: #24211e;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+/* HERO */
+
+
+.hero {
+  min-height: 600px;
+  padding: 100px 8%;
+  background-color: #d8c5aa;
+  background-image: url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=85");
+  
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+  .subtitle {
+  font-size: 11px;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+
+.hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 65px;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 0 20px;
+}
+
+.description {
+  font-size: 20px;
+  line-height: 1.8;
+  max-width: 420px;
+  margin-bottom: 35px;
+  color: #ff6e77;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
+  font-weight: 600;
+}
+
+.shop-button {
+  display: inline-block;
+  background-color: #f7f4ef;
+  color: #24211e;
+  text-decoration: none;
+  padding: 17px 28px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.shop-button:hover {
+  background-color: #c6a77b;
+  color: white;
+}
+
+/* FURNITURE COLLECTION */
+
+.collection {
+  padding: 90px 7%;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.section-subtitle {
+  color: #a1845d;
+  font-size: 11px;
+  letter-spacing: 4px;
+}
+
+.collection h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
+  font-weight: 400;
+  margin: 15px 0;
+}
+
+.collection-description {
+  color: #77716a;
+  font-size: 14px;
+  margin-bottom: 45px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  text-align: left;
+}
+
+.product img {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.product h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  margin: 20px 0 8px;
+}
+
+.product p {
+  color: #77716a;
+  font-size: 12px;
+}
+
+.products span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* FURNITURE DROPDOWN */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
+  min-width: 180px;
+  background-color: #f7f4ef;
+  z-index: 100;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #24211e;
+}
+
+.dropdown-content a:hover {
+  background-color: #ff6e77;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ANIMACION SOLAMENTE EN LAS IMAGENES */
+.product img {
+  transition: transform 0.3s ease;
+}
+
+.product img:hover {
+  transform: scale(1.06);
+}
+
+
+/* VISTA MOVIL */
+@media (max-width: 768px) {
+  .collection .products {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .collection .products .product {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    transform: none !important;
+  }
+
+  .collection .products .product img {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* COMPUTADORA: tres columnas */
+.collection .products {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+}
+
+/* CELULAR: una columna */
+@media screen and (max-width: 768px) {
+  .collection .products {
+    grid-template-columns: 1fr;
+  }
+}
+/* =================================
+   COLORES Y EFECTO HOVER
+   ================================= */
+
+/* Todos los textos comienzan en negro */
+.product h3,
+.product p,
+.product span {
+  color: #000000;
+  transition: color 0.3s ease;
+}
+
+/* Los títulos cambian a coral */
+.product h3:hover {
+  color: #ff6e77;
+}
+
+/* Las descripciones cambian a dorado */
+.product p:hover {
+  color: #a1845d;
+}
+
+/* Los precios cambian a gris */
+.product span:hover {
+  color: #ce7e00;
+}
+
+/* CUSTOMER REVIEWS */
+
+.reviews {
+  padding: 80px 7%;
+  background-color: #f7faf8;
+  text-align: center;
+}
+
+.reviews-subtitle {
+  color: #a1845d;
+  letter-spacing: 4px;
+  font-size: 11px;
+}
+
+.reviews h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
+  font-weight: 400;
+}
+
+.reviews-description {
+  color: #77716a;
+  margin-bottom: 40px;
+}
+
+.reviews-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  text-align: left;
+}
+
+.review {
+  background-color: #ffffff;
+  border: 1px solid #c7c9c8;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.review-stars {
+  color: #ffd700;
+  font-size: 25px;
+  letter-spacing: 3px;
+}
+
+.review-text {
+  color: #24211e;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.review h3 {
+  color: #24211e;
+  font-size: 16px;
+}
+
+.review span {
+  color: #77716a;
+  font-size: 12px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .reviews-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==============================
+   ABOUT SECTION
+   ============================== */
+
+.about {
+  padding: 80px 7%;
+  background-color: #f7faf8;
+}
+
+.about-subtitle {
+  color: #a1845d;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.about > h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
+  font-weight: 400;
+  color: #24211e;
+  text-align: center;
+  margin: 0 0 50px;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: #24211e;
+  margin-top: 0;
+}
+
+.about-text p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #77716a;
+  margin-bottom: 20px;
+}
+
+.about-image {
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.about-image img {
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.04);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .about {
+    padding: 55px 6%;
+  }
+
+  .about > h2 {
+    font-size: 34px;
+    margin-bottom: 30px;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .about-text h3 {
+    font-size: 26px;
+  }
+
+  .about-image img {
+    height: 300px;
+  }
+}
+
+/* ==============================
+   CONTACT SECTION
+   ============================== */
+
+.contact {
+  padding: 80px 7%;
+  background-color: #ffffff;
+}
+
+.contact-subtitle {
+  color: #a1845d;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.contact > h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
+  font-weight: 400;
+  color: #24211e;
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+.contact-description {
+  color: #77716a;
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: center;
+  max-width: 550px;
+  margin: 0 auto 50px;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  padding: 20px 0;
+}
+
+.contact-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: #24211e;
+  margin-top: 0;
+}
+
+.contact-info > p {
+  color: #77716a;
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 35px;
+}
+
+.contact-detail {
+  margin-bottom: 25px;
+}
+
+.contact-detail strong {
+  display: block;
+  color: #24211e;
+  font-size: 13px;
+  margin-bottom: 7px;
+}
+
+.contact-detail p {
+  color: #77716a;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* FORM */
+
+.contact-form {
+  background-color: #f7faf8;
+  border: 1px solid #c7c9c8;
+  border-radius: 4px;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  color: #24211e;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 14px;
+  margin-bottom: 22px;
+  border: 1px solid #c7c9c8;
+  border-radius: 3px;
+  background-color: #ffffff;
+  color: #24211e;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 1px solid #a1845d;
+  border-color: #a1845d;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #ff6e77;
+  color: #ffffff;
+  border: none;
+  padding: 15px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #24211e;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 55px 6%;
+  }
+
+  .contact > h2 {
+    font-size: 34px;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .contact-info h3 {
+    font-size: 26px;
+  }
+
+  .contact-form {
+    padding: 25px 20px;
+  }
+}
